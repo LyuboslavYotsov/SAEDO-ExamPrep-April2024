@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  unit_tests:
+  build:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout of the repo
@@ -23,5 +23,8 @@ jobs:
     - name: Install dependencies
       run: npm install
       
+  run_unit_tests:
+    runs-on: ubuntu-latest
+    steps:
     - name: Run Unit tests
       run: npm run test:unit
